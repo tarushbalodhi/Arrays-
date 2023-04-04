@@ -1,0 +1,23 @@
+	void segregateEvenOdd(int arr[], int n) {
+	    vector<int> odd;
+	    vector<int> even;
+	    
+	    for(int i = 0; i < n; i++){
+	        if(arr[i] % 2 == 0){
+	            // even numbers
+	            even.push_back(arr[i]);
+	        }
+	        else odd.push_back(arr[i]);
+	    }
+	    
+	   // sorting  
+	   sort(even.begin(), even.end());
+	   sort(odd.begin(), odd.end());
+	   
+	   //now merge both vectors into one
+	    even.insert(even.end(), odd.begin(), odd.end());
+	    
+	    // copy all elem back to org array
+	    copy(even.begin(), even.end(), arr);
+	   
+	}
