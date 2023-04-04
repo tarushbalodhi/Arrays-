@@ -1,0 +1,24 @@
+    vector<int> firstAndLast(vector<int> &arr, int n, int x) {
+       
+      int s  = 0;
+      int e = n-1;
+      vector<int> v;
+      while(s <= e){
+          if(x != arr[s]){
+              s++;
+          }
+          if(x != arr[e]){
+              e--;
+          }
+         if(s <= e && arr[s] == x && arr[e] == x){
+             v.push_back(s);
+             v.push_back(e);
+             break;
+         }
+      }
+      
+      if(v.empty()){
+          v.push_back(-1);
+      }
+      return v;
+    }
