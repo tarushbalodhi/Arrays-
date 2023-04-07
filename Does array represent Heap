@@ -1,0 +1,21 @@
+ bool isMaxHeap(int a[], int n)
+    {
+    //   for(int i = 0 ; i <= (n-2); i++){  // from root node till last internal node
+           
+    //       if(a[2*i + 1] > a[i]){   // if left child is greator
+    //           return false;
+    //       }
+           
+    //       if(a[2*i + 2] > a[i] && 2*i+2 < n){ // if right child is greator
+    //           return false;
+    //       }
+    //   }
+    //   return true;
+    
+    
+    for(int i = 1; i < n; i++){
+        int paren = (i-1) / 2;
+        if(a[paren] < a[i]) return false;
+    }
+    return true;
+    }
